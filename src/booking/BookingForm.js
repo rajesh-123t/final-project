@@ -37,10 +37,10 @@ const handleSubmit = (e) => {
         <h1>BOOK NOW</h1>
 
         <label htmlFor="res-date">Choose date</label>
-        <input type="date" id="res-date" value={date} required aria-required="true" onChange={handleDateChange} />
+        <input type="date" id="res-date" value={date}  required min="1900-01-01" max="2024-12-31" aria-required="true" onChange={handleDateChange} />
 
         <label htmlFor="res-time">Choose time</label>
-        <select id="res-time" value={time} required onChange={(e) =>setTime(e.target.value)}>
+        <select id="res-time" value={time} className="time" required onChange={(e) =>setTime(e.target.value)}>
         <option value="">select time</option>
             <Bookingslot availableTimes={availableTimes}/>
         </select>
