@@ -7,7 +7,7 @@ function BookingForm({availableTimes,dispatch,submitForm})
 {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
-    const [guest, setGuest] = useState(1);
+    const [guest, setGuest] = useState("");
     const [occasion,setOccasion] = useState("");
     const [isValid,setIsValid]=useState(false)
 
@@ -46,8 +46,8 @@ const handleSubmit = (e) => {
         </select>
 
         <label htmlFor="guest">Number of guests</label>
-        <input type="number" id="guest" min="1" max="10" value={guest} required aria-required="true"
-        onChange={(e) => setGuest(parseInt(e.target.value, 10))} />
+        <input type="number" placeholder="number of guests" id="guest" min="1" max="10" value={guest} required aria-required="true"
+        onChange={(e) => setGuest(e.target.value)} />
 
         <label htmlFor="occasion">Occasion</label>
         <select id="occasion" value={occasion} onChange={(e) =>setOccasion(e.target.value)}>
